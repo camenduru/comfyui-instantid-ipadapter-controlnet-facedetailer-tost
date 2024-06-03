@@ -14,7 +14,7 @@ RUN apt update -y && add-apt-repository -y ppa:git-core/ppa && apt update -y && 
 USER camenduru
 
 RUN pip install -q opencv-python imageio imageio-ffmpeg ffmpeg-python av runpod \
-    xformers==0.0.25 torchsde==0.2.6 einops==0.8.0 diffusers==0.28.0 accelerate==0.30.1 insightface==0.7.3 onnxruntime==1.18.0 onnxruntime-gpu==1.18.0
+    xformers==0.0.25 torchsde==0.2.6 einops==0.8.0 diffusers==0.28.0 transformers==4.41.2 accelerate==0.30.1 insightface==0.7.3 onnxruntime==1.18.0 onnxruntime-gpu==1.18.0
 
 RUN git clone -b totoro https://github.com/camenduru/ComfyUI /content/TotoroUI
 RUN git clone -b totoro_v2 https://github.com/camenduru/ComfyUI_IPAdapter_plus /content/TotoroUI/IPAdapter
