@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-04/hyper-schema#",
+    "type": "object",
+    "properties": {
+      "readme": {
+        "type": "string",
+        "title": "InstantID: Zero-shot Identity-Preserving Generation in Seconds",
+        "author": "Qixun Wang, Xu Bai, Haofan Wang, Zekui Qin, Anthony Chen, Huaxia Li, Xu Tang, Yao Hu",
+        "page": "https://instantid.github.io/",
+        "code": "https://github.com/InstantID/InstantID",
+        "jupyter": "https://github.com/camenduru/InstantID-IPAdapter-ControlNet-jupyter",
+        "post": "https://x.com/camenduru/status/1749419342490407342",
+        "tags": [
+          "Text to Image"
+        ],
+        "widget": "readme"
+      },
+      "positive_prompt": {
+        "type": "string",
+        "description": "Positive Prompt",
+        "widget": "textarea"
+      },
+      "negative_prompt": {
+        "type": "string",
+        "description": "Negative Prompt",
+        "widget": "textarea"
+      },
+      "input_image": {
+        "type": "string",
+        "description": "Input Image URL",
+        "widget": "textarea"
+      },
+      "kps_image": {
+        "type": "number",
+        "description": "KPS Image URL"
+      },
+      "dw_image": {
+        "type": "number",
+        "description": "DW Image URL"
+      }
+    },
+    "buttons": [
+      {
+        "id": "enter",
+        "label": "🥪 Enter"
+      }
+    ]
+  }
