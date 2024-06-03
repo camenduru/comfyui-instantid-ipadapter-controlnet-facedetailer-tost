@@ -31,7 +31,7 @@ RUN aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civitai.com/ap
 	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/DIAMONIK7777/antelopev2/resolve/main/glintr100.onnx -d /content/TotoroUI/models/insightface/models/antelopev2 -o glintr100.onnx && \
 	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/DIAMONIK7777/antelopev2/resolve/main/scrfd_10g_bnkps.onnx -d /content/TotoroUI/models/insightface/models/antelopev2 -o scrfd_10g_bnkps.onnx && \
 	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/InstantX/InstantID/resolve/main/ip-adapter.bin -d /content/TotoroUI/models/instantid -o ip-adapter.bin && \
-	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/InstantX/InstantID/resolve/main/ControlNetModel/diffusion_pytorch_model.safetensors -d /content/TotoroUI/models/controlnet/SDXL/instantid -o diffusion_pytorch_model.safetensors && \
+	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/InstantX/InstantID/resolve/main/ControlNetModel/diffusion_pytorch_model.safetensors -d /content/TotoroUI/models/controlnet/SDXL/instantid -o diffusion_pytorch_model.safetensors
 
 COPY ./worker_runpod.py /content/TotoroUI/worker_runpod.py
 WORKDIR /content/TotoroUI
