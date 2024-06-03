@@ -31,12 +31,14 @@
         "widget": "textarea"
       },
       "kps_image": {
-        "type": "number",
-        "description": "KPS Image URL"
+        "type": "string",
+        "description": "KPS Image URL",
+        "widget": "textarea"
       },
       "dw_image": {
-        "type": "number",
-        "description": "DW Image URL"
+        "type": "string",
+        "description": "DW Image URL",
+        "widget": "textarea"
       }
     },
     "buttons": [
