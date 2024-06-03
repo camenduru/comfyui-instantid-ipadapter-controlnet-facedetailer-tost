@@ -39,6 +39,14 @@
         "type": "string",
         "description": "DW Image URL",
         "widget": "textarea"
+      },
+      "width": {
+        "type": "integer",
+        "description": "Width"
+      },
+      "height": {
+        "type": "integer",
+        "description": "Height"
       }
     },
     "buttons": [

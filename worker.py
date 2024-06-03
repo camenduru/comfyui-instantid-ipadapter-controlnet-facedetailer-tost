@@ -51,6 +51,8 @@ def generate(command):
     dw_image = values['dw_image']
     positive_prompt = values['positive_prompt']
     negative_prompt = values['negative_prompt']
+    width = values['width']
+    height = values['height']
     input_image = download_file(input_image)
     kps_image = download_file(kps_image)
     dw_image = download_file(dw_image)
@@ -68,7 +70,7 @@ def generate(command):
     openpose_control_net = totoro.controlnet.load_controlnet("/content/TotoroUI/models/controlnet/thibaud_xl_openpose.safetensors")
     openpose_cond = nodes.ControlNetApply().apply_controlnet(conditioning=instantid_cond, control_net=openpose_control_net, image=image_dw, strength=0.90)
 
-    latent = {"samples":torch.zeros([1, 4, 1024 // 8, 1024 // 8])}
+    latent = {"samples":torch.zeros([1, 4, height // 8, width // 8])}
     ran = random.randint(0, 65535)
     print(ran)
     sample = nodes.common_ksampler(model=work_model, 
@@ -97,11 +99,13 @@ with gr.Blocks(css=".gradio-container {max-width: 544px !important}", analytics_
       with gr.Column():
           textbox = gr.Textbox(show_label=False, 
           value="""{
-    "positive_prompt": "1girl",
-    "negative_prompt": "lowres, child, getty, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, artist name, trademark, watermark, title, multiple view, reference sheet, mutated hands and fingers, poorly drawn face, mutation, deformed, ugly, bad proportions, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, tatoo, amateur drawing, odd eyes, uneven eyes, unnatural face, uneven nostrils, crooked mouth, bad teeth, crooked teeth, photoshop, video game, censor, censored, ghost, b&w, weird colors, gradient background, spotty background, blurry background, ugly background, simple background, realistic, out of frame, extra objects, gross, ugly, tiling, poorly drawn hands, poorly drawn feet, poorly drawn face, out of focus, blurry, very long body, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn eyes, cloned face, disfigured, deformed, cross-eye, extra limbs, missing limb, malformed hands, mutated, morbid, mutilated, disfigured, extra arms, extra hands, mangled fingers, contorted, conjoined, mismatched limbs, mismatched parts, bad perspective, black and white, oversaturated, undersaturated, bad shadow, cropped image, draft, grainy, pixelated",
-    "input_image": "https://huggingface.co/camenduru/IICF/resolve/main/test/anya.jpg",
-    "kps_image": "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00008_.png",
-    "dw_image": "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00008_.png"
+    "positive_prompt":" 1girl",
+    "negative_prompt":" lowres, child, getty, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, artist name, trademark, watermark, title, multiple view, reference sheet, mutated hands and fingers, poorly drawn face, mutation, deformed, ugly, bad proportions, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, tatoo, amateur drawing, odd eyes, uneven eyes, unnatural face, uneven nostrils, crooked mouth, bad teeth, crooked teeth, photoshop, video game, censor, censored, ghost, b&w, weird colors, gradient background, spotty background, blurry background, ugly background, simple background, realistic, out of frame, extra objects, gross, ugly, tiling, poorly drawn hands, poorly drawn feet, poorly drawn face, out of focus, blurry, very long body, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn eyes, cloned face, disfigured, deformed, cross-eye, extra limbs, missing limb, malformed hands, mutated, morbid, mutilated, disfigured, extra arms, extra hands, mangled fingers, contorted, conjoined, mismatched limbs, mismatched parts, bad perspective, black and white, oversaturated, undersaturated, bad shadow, cropped image, draft, grainy, pixelated",
+    "input_image":" https://huggingface.co/camenduru/IICF/resolve/main/test/anya.jpg",
+    "kps_image":" https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00008_.png",
+    "dw_image":" https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00008_.png",
+    "width": 832,
+    "height": 1152
 }""")
           button = gr.Button()
     with gr.Row(variant="default"):

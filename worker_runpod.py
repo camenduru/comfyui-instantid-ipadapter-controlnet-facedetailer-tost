@@ -55,6 +55,8 @@ def generate(input):
     dw_image = values['dw_image']
     positive_prompt = values['positive_prompt']
     negative_prompt = values['negative_prompt']
+    width = values['width']
+    height = values['height']
     input_image = download_file(input_image)
     kps_image = download_file(kps_image)
     dw_image = download_file(dw_image)
@@ -72,7 +74,7 @@ def generate(input):
     openpose_control_net = totoro.controlnet.load_controlnet("/content/TotoroUI/models/controlnet/thibaud_xl_openpose.safetensors")
     openpose_cond = nodes.ControlNetApply().apply_controlnet(conditioning=instantid_cond, control_net=openpose_control_net, image=image_dw, strength=0.90)
 
-    latent = {"samples":torch.zeros([1, 4, 1024 // 8, 1024 // 8])}
+    latent = {"samples":torch.zeros([1, 4, height // 8, width // 8])}
     ran = random.randint(0, 65535)
     print(ran)
     sample = nodes.common_ksampler(model=work_model, 
