@@ -4,6 +4,6 @@
     "input_image": "https://huggingface.co/camenduru/IICF/resolve/main/test/anya.jpg",
     "kps_image": "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00008_.png",
     "dw_image": "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00008_.png",
-    "width": 832,
-    "height": 1152
+    "width": 1024,
+    "height": 1024
 }
