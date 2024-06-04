@@ -25,6 +25,16 @@
           "description": "Negative Prompt",
           "widget": "textarea"
       },
+      "face_positive_prompt": {
+          "type": "string",
+          "description": "Face Positive Prompt",
+          "widget": "textarea"
+      },
+      "face_negative_prompt": {
+          "type": "string",
+          "description": "Face Negative Prompt",
+          "widget": "textarea"
+      },
       "input_image": {
           "type": "string",
           "description": "Input Image URL",

@@ -14,13 +14,15 @@ RUN apt update -y && add-apt-repository -y ppa:git-core/ppa && apt update -y && 
 USER camenduru
 
 RUN pip install -q opencv-python imageio imageio-ffmpeg ffmpeg-python av runpod \
-    xformers==0.0.25 torchsde==0.2.6 einops==0.8.0 diffusers==0.28.0 transformers==4.41.2 accelerate==0.30.1 insightface==0.7.3 onnxruntime==1.18.0 onnxruntime-gpu==1.18.0
+    xformers==0.0.25 torchsde==0.2.6 einops==0.8.0 diffusers==0.28.0 transformers==4.41.2 accelerate==0.30.1 insightface==0.7.3 onnxruntime==1.18.0 onnxruntime-gpu==1.18.0 \
+	ultralytics==8.2.27 segment-anything piexif
 
 RUN git clone -b totoro https://github.com/camenduru/ComfyUI /content/TotoroUI
 RUN git clone -b totoro_v2 https://github.com/camenduru/ComfyUI_IPAdapter_plus /content/TotoroUI/IPAdapter
 RUN git clone -b totoro https://github.com/camenduru/ComfyUI_InstantID /content/TotoroUI/InstantID
 
-RUN aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civitai.com/api/download/models/470847 -d /content/TotoroUI/models -o raemuXL_v35Lightning.safetensors && \
+RUN aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civitai.com/api/download/models/354657 -d /content/TotoroUI/models -o dreamshaperXL_lightningDPMSDE.safetensors && \
+	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civitai.com/api/download/models/470847 -d /content/TotoroUI/models -o raemuXL_v35Lightning.safetensors && \
 	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors -d /content/TotoroUI/models/clip_vision -o CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors && \
 	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors  -d /content/TotoroUI/models/ipadapter -o ip-adapter-plus-face_sdxl_vit-h.safetensors && \
 	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/thibaud_xl_openpose.safetensors -d /content/TotoroUI/models/controlnet -o thibaud_xl_openpose.safetensors && \
@@ -31,7 +33,8 @@ RUN aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civitai.com/ap
 	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/DIAMONIK7777/antelopev2/resolve/main/glintr100.onnx -d /content/TotoroUI/models/insightface/models/antelopev2 -o glintr100.onnx && \
 	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/DIAMONIK7777/antelopev2/resolve/main/scrfd_10g_bnkps.onnx -d /content/TotoroUI/models/insightface/models/antelopev2 -o scrfd_10g_bnkps.onnx && \
 	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/InstantX/InstantID/resolve/main/ip-adapter.bin -d /content/TotoroUI/models/instantid -o ip-adapter.bin && \
-	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/InstantX/InstantID/resolve/main/ControlNetModel/diffusion_pytorch_model.safetensors -d /content/TotoroUI/models/controlnet/SDXL/instantid -o diffusion_pytorch_model.safetensors
+	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/InstantX/InstantID/resolve/main/ControlNetModel/diffusion_pytorch_model.safetensors -d /content/TotoroUI/models/controlnet/SDXL/instantid -o diffusion_pytorch_model.safetensors && \
+	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/camenduru/IICF/resolve/main/ultralytics/bbox/Eyes.pt -d /content/TotoroUI/models/ultralytics/bbox -o Eyes.pt
 
 COPY ./worker_runpod.py /content/TotoroUI/worker_runpod.py
 WORKDIR /content/TotoroUI
