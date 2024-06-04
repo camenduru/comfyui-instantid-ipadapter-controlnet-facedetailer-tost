@@ -20,6 +20,7 @@ RUN pip install -q opencv-python imageio imageio-ffmpeg ffmpeg-python av runpod 
 RUN git clone -b totoro https://github.com/camenduru/ComfyUI /content/TotoroUI
 RUN git clone -b totoro_v2 https://github.com/camenduru/ComfyUI_IPAdapter_plus /content/TotoroUI/IPAdapter
 RUN git clone -b totoro https://github.com/camenduru/ComfyUI_InstantID /content/TotoroUI/InstantID
+RUN git clone -b totoro https://github.com/camenduru/ComfyUI-Impact-Pack /content/TotoroUI/Impact
 
 RUN aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civitai.com/api/download/models/354657 -d /content/TotoroUI/models -o dreamshaperXL_lightningDPMSDE.safetensors && \
 	aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civitai.com/api/download/models/470847 -d /content/TotoroUI/models -o raemuXL_v35Lightning.safetensors && \
