@@ -105,9 +105,9 @@ def generate(command):
     upscaled_img = nodes.ImageScaleBy.upscale(_, image=enhanced_img, upscale_method="lanczos", scale_by=1.50)
     adjust_img = detailer.image_filters(image=upscaled_img[0], brightness=0.0, contrast=1.0, saturation=1.0, sharpness=3, blur=0, gaussian_blur=0.0, edge_enhance=0.10, detail_enhance=True)
 
-    Image.fromarray(np.array(adjust_img[0]*255, dtype=np.uint8)[0]).save("/content/image.png")
+    Image.fromarray(np.array(adjust_img[0]*255, dtype=np.uint8)[0]).save("/content/output_image.png")
 
-    return "/content/image.png"
+    return "/content/output_image.png"
 
 import gradio as gr
 
