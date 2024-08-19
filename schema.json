@@ -1,578 +1,579 @@
 {
-  "$schema": "http://json-schema.org/draft-04/hyper-schema#",
-  "type": "object",
-  "properties": {
+    "$schema": "http://json-schema.org/draft-04/hyper-schema#",
+    "type": "object",
+    "properties": {
       "readme": {
-          "type": "string",
-          "title": "InstantID: Zero-shot Identity-Preserving Generation in Seconds",
-          "author": "Qixun Wang, Xu Bai, Haofan Wang, Zekui Qin, Anthony Chen, Huaxia Li, Xu Tang, Yao Hu",
-          "page": "https://instantid.github.io/",
-          "code": "https://github.com/InstantID/InstantID",
-          "jupyter": "https://github.com/camenduru/InstantID-IPAdapter-ControlNet-jupyter",
-          "post": "https://x.com/camenduru/status/1749419342490407342",
-          "tags": [
-              "Text to Image"
-          ],
-          "widget": "readme"
+        "type": "string",
+        "title": "InstantID: Zero-shot Identity-Preserving Generation in Seconds",
+        "author": "Qixun Wang, Xu Bai, Haofan Wang, Zekui Qin, Anthony Chen, Huaxia Li, Xu Tang, Yao Hu",
+        "page": "https://instantid.github.io/",
+        "code": "https://github.com/InstantID/InstantID",
+        "jupyter": "https://github.com/camenduru/InstantID-IPAdapter-ControlNet-jupyter",
+        "post": "https://x.com/camenduru/status/1749419342490407342",
+        "api": "https://github.com/camenduru/tost-api-examples/blob/main/v1/comfyui-instantid-ipadapter-controlnet-facedetailer.ipynb",
+        "tags": [
+          "Text to Image"
+        ],
+        "widget": "readme"
       },
       "positive_prompt": {
-          "type": "string",
-          "description": "Positive Prompt",
-          "widget": "textarea"
+        "type": "string",
+        "description": "Positive Prompt",
+        "widget": "textarea"
       },
       "negative_prompt": {
-          "type": "string",
-          "description": "Negative Prompt",
-          "widget": "textarea"
+        "type": "string",
+        "description": "Negative Prompt",
+        "widget": "textarea"
       },
       "face_positive_prompt": {
-          "type": "string",
-          "description": "Face Positive Prompt",
-          "widget": "textarea"
+        "type": "string",
+        "description": "Face Positive Prompt",
+        "widget": "textarea"
       },
       "face_negative_prompt": {
-          "type": "string",
-          "description": "Face Negative Prompt",
-          "widget": "textarea"
+        "type": "string",
+        "description": "Face Negative Prompt",
+        "widget": "textarea"
       },
       "input_image": {
-          "type": "string",
-          "description": "Input Image URL",
-          "widget": "textarea"
+        "type": "string",
+        "description": "Input Image URL",
+        "widget": "textarea"
       },
       "kps_image": {
-          "type": "string",
-          "widget": "select",
-          "description": "KPS Image URL",
-          "oneOf": [
-              {
-                  "description": "headshot_kps_01",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00001_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_kps_02",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00002_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_kps_03",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00003_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_kps_04",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00004_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_kps_05",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00005_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_kps_06",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00006_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_kps_07",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00007_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_kps_08",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00008_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_kps_09",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00009_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_kps_10",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00010_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_kps_11",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00011_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_kps_12",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00012_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_kps_13",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00013_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_kps_14",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00014_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_01",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00001_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_02",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00002_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_03",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00003_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_04",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00004_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_05",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00005_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_06",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00006_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_07",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00007_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_08",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00008_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_09",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00009_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_10",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00010_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_11",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00011_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_12",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00012_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_13",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00013_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_14",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00014_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_15",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00015_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_16",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00016_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_17",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00017_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_18",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00018_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_19",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00019_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_20",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00020_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_21",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00021_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_22",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00022_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_23",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00023_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_24",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00024_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_25",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00025_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_26",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00026_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_27",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00027_.png"
-                  ]
-              },
-              {
-                  "description": "pose_kps_28",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00028_.png"
-                  ]
-              }
-          ],
-          "default": "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00018_.png"
+        "type": "string",
+        "widget": "select",
+        "description": "KPS Image URL",
+        "oneOf": [
+          {
+            "description": "headshot_kps_01",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00001_.png"
+            ]
+          },
+          {
+            "description": "headshot_kps_02",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00002_.png"
+            ]
+          },
+          {
+            "description": "headshot_kps_03",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00003_.png"
+            ]
+          },
+          {
+            "description": "headshot_kps_04",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00004_.png"
+            ]
+          },
+          {
+            "description": "headshot_kps_05",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00005_.png"
+            ]
+          },
+          {
+            "description": "headshot_kps_06",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00006_.png"
+            ]
+          },
+          {
+            "description": "headshot_kps_07",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00007_.png"
+            ]
+          },
+          {
+            "description": "headshot_kps_08",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00008_.png"
+            ]
+          },
+          {
+            "description": "headshot_kps_09",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00009_.png"
+            ]
+          },
+          {
+            "description": "headshot_kps_10",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00010_.png"
+            ]
+          },
+          {
+            "description": "headshot_kps_11",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00011_.png"
+            ]
+          },
+          {
+            "description": "headshot_kps_12",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00012_.png"
+            ]
+          },
+          {
+            "description": "headshot_kps_13",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00013_.png"
+            ]
+          },
+          {
+            "description": "headshot_kps_14",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_kps_00014_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_01",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00001_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_02",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00002_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_03",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00003_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_04",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00004_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_05",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00005_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_06",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00006_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_07",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00007_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_08",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00008_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_09",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00009_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_10",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00010_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_11",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00011_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_12",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00012_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_13",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00013_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_14",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00014_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_15",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00015_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_16",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00016_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_17",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00017_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_18",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00018_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_19",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00019_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_20",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00020_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_21",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00021_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_22",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00022_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_23",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00023_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_24",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00024_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_25",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00025_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_26",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00026_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_27",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00027_.png"
+            ]
+          },
+          {
+            "description": "pose_kps_28",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00028_.png"
+            ]
+          }
+        ],
+        "default": "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_kps_00018_.png"
       },
       "dw_image": {
-          "type": "string",
-          "widget": "select",
-          "description": "DW Image URL",
-          "oneOf": [
-              {
-                  "description": "headshot_dw_01",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00001_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_dw_02",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00002_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_dw_03",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00003_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_dw_04",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00004_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_dw_05",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00005_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_dw_06",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00006_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_dw_07",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00007_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_dw_08",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00008_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_dw_09",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00009_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_dw_10",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00010_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_dw_11",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00011_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_dw_12",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00012_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_dw_13",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00013_.png"
-                  ]
-              },
-              {
-                  "description": "headshot_dw_14",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00014_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_01",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00001_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_02",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00002_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_03",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00003_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_04",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00004_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_05",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00005_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_06",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00006_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_07",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00007_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_08",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00008_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_09",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00009_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_10",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00010_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_11",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00011_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_12",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00012_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_13",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00013_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_14",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00014_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_15",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00015_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_16",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00016_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_17",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00017_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_18",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00018_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_19",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00019_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_20",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00020_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_21",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00021_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_22",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00022_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_23",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00023_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_24",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00024_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_25",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00025_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_26",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00026_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_27",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00027_.png"
-                  ]
-              },
-              {
-                  "description": "pose_dw_28",
-                  "enum": [
-                      "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00028_.png"
-                  ]
-              }
-          ],
-          "default": "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00018_.png"
+        "type": "string",
+        "widget": "select",
+        "description": "DW Image URL",
+        "oneOf": [
+          {
+            "description": "headshot_dw_01",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00001_.png"
+            ]
+          },
+          {
+            "description": "headshot_dw_02",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00002_.png"
+            ]
+          },
+          {
+            "description": "headshot_dw_03",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00003_.png"
+            ]
+          },
+          {
+            "description": "headshot_dw_04",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00004_.png"
+            ]
+          },
+          {
+            "description": "headshot_dw_05",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00005_.png"
+            ]
+          },
+          {
+            "description": "headshot_dw_06",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00006_.png"
+            ]
+          },
+          {
+            "description": "headshot_dw_07",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00007_.png"
+            ]
+          },
+          {
+            "description": "headshot_dw_08",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00008_.png"
+            ]
+          },
+          {
+            "description": "headshot_dw_09",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00009_.png"
+            ]
+          },
+          {
+            "description": "headshot_dw_10",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00010_.png"
+            ]
+          },
+          {
+            "description": "headshot_dw_11",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00011_.png"
+            ]
+          },
+          {
+            "description": "headshot_dw_12",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00012_.png"
+            ]
+          },
+          {
+            "description": "headshot_dw_13",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00013_.png"
+            ]
+          },
+          {
+            "description": "headshot_dw_14",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/headshot_dw_pose_00014_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_01",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00001_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_02",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00002_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_03",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00003_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_04",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00004_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_05",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00005_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_06",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00006_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_07",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00007_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_08",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00008_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_09",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00009_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_10",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00010_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_11",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00011_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_12",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00012_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_13",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00013_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_14",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00014_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_15",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00015_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_16",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00016_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_17",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00017_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_18",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00018_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_19",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00019_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_20",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00020_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_21",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00021_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_22",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00022_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_23",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00023_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_24",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00024_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_25",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00025_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_26",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00026_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_27",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00027_.png"
+            ]
+          },
+          {
+            "description": "pose_dw_28",
+            "enum": [
+              "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00028_.png"
+            ]
+          }
+        ],
+        "default": "https://huggingface.co/camenduru/IICF/resolve/main/test/pose_images/pose_dw_pose_00018_.png"
       },
       "width": {
-          "type": "integer",
-          "description": "Width"
+        "type": "integer",
+        "description": "Width"
       },
       "height": {
-          "type": "integer",
-          "description": "Height"
+        "type": "integer",
+        "description": "Height"
       }
-  },
-  "buttons": [
+    },
+    "buttons": [
       {
-          "id": "enter",
-          "label": "🥪 Enter"
+        "id": "enter",
+        "label": "🥪 Enter"
       }
-  ]
-}
+    ]
+  }
