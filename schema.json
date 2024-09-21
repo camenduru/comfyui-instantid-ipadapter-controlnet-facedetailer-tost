@@ -568,6 +568,14 @@
       "height": {
         "type": "integer",
         "description": "Height"
+      },
+      "example": {
+        "type": "string",
+        "image1": "https://fakeimg.pl/1024x1024/282828/eae0d0/?text=input#.png",
+        "image2": "https://i.ibb.co/gVSbjn4/Anya-Taylor-Joy-3790afe.jpg",
+        "image3": "https://fakeimg.pl/1024x1024/282828/eae0d0/?text=output#.png",
+        "image4": "https://files.catbox.moe/ggecj2.png",
+        "widget": "example"
       }
     },
     "buttons": [
