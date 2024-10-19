@@ -26,4 +26,4 @@ https://instantid.github.io/ <br />
 https://ip-adapter.github.io/ <br />
 
 ### 🏢 Sponsor
-https://runpod.io
+[https://runpod.io](https://runpod.io?ref=iqi9iy8y)
